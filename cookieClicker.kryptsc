@@ -1,3 +1,4 @@
+screen(1280, 720);
 load("count", 4);
 load("factories", 5);
 setvar(1, 1);

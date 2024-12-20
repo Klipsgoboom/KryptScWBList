@@ -1,0 +1,72 @@
+screen(1280, 720);
+loop;
+var(setvar(1, 1); X value;
+setvar(2, 1); Y value;
+setvar(3, 1); X increment;
+setvar(4, 1); Y increment;
+setvar(5, 1); Multiplier;
+
+setvar(6,1); X additive;
+setvar(7,1); Y additive;
+setvar(8, 1); Mult additive X;
+setvar(9, 1); Mult additive Y;
+loop;
+clr;
+bt1click addMult;
+
+settext "Speed multiplier";
+coordx(10);
+coordy(10);
+sign;
+settext KSCvar.5;
+coordx(150);
+coordy(10);
+sign;
+
+settext "I";
+coordx(KSCvar.6);
+coordy(KSCvar.7);
+sign;
+
+var(KSCvar.1, + KSCvar.3, 1);
+var(KSCvar.2, + KSCvar.4, 2);
+
+var(KSCvar.1, + KSCvar.5, 1);
+var(KSCvar.2, + KSCvar.5, 2);
+
+if KSCvar.1 > 1280; {;
+setvar(3, -1);
+};
+if KSCvar.1 < 0; {;
+setvar(3, 1);
+};
+
+if KSCvar.2 > 720; {;
+setvar(4, -1);
+};
+
+if KSCvar.2 < 0; {;
+setvar(4, 1);
+};
+
+var(KSCvar.1, +, KSCvar.3, 6);
+var(KSCvar.2, +, KSCvar.4, 7);
+
+var(KSCvar.3, *, KSCvar.5, 8); Get incrementX x mult;
+var(KSCvar.4, *, KSCvar.5, 9); Get incrementY x mult;
+var(KSCvar.1, +, KSCvar.8, 1); Add mult increment to X;
+var(KSCvar.2, +, KSCvar.9, 2); Add mult increment to Y;
+
+var(KSCvar.1, +, KSCvar.8, 6);
+var(KSCvar.2, +, KSCvar.9, 7);
+
+settext "I AM SEVERELY RACIST";
+sign;
+coordy(100);
+img("https://health.wyo.gov/wp-content/uploads/2020/08/happy-guy-celebrating-with-hands-up.jpg", 0, 80, 400, 200);
+
+function addMult;
+var(KSCvar.5, +, 1, 5);
+};
+
+|;
